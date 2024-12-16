@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# 🚀 Sletcher Systems Website
 
+A cutting-edge web platform showcasing educational technology, AI solutions, and custom development services. Built with Next.js 13+, TypeScript, and TailwindCSS.
+
+![Sletcher Systems](public/hero-bg.jpg)
+
+## 🌟 Features
+
+### 🎨 Design & UX
+- Sleek dark mode interface with dynamic theme switching
+- Smooth animations and transitions
+- Responsive design for all devices
+- Interactive components and hover effects
+- Modern gradient backgrounds
+
+### 🛠 Technical Stack
+- **Framework**: Next.js 13+ with App Router
+- **Language**: TypeScript
+- **Styling**: TailwindCSS
+- **Icons**: Lucide React
+- **Animations**: Custom CSS animations
+- **State Management**: React Hooks
+
+## 📋 Pages
+
+### 🏠 Home
+- Hero section with dynamic background
+- Vision statement
+- Company overview
+- Call-to-action sections
+
+### 👤 About Me
+- Professional journey timeline
+- Skills and certifications showcase
+- Educational background
+- Multilingual capabilities
+
+### 💼 Services
+- Educational technology solutions
+- AI/ML integrations
+- Custom development services
+- Interactive service cards
+
+### 🎯 Solutions
+- Detailed solution breakdowns
+- Feature lists
+- Benefits overview
+- Implementation process
+
+### 🌐 Clients
+- Project showcases
+- Subdomain management
+- Live project status
+- Technology stack display
+
+### 📚 Portfolio
+- Personal projects
+- Certification showcase
+- Skills progression
+- Learning journey
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/sletchersystems.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Theme Colors
+The site uses a custom color palette:
+- Primary: South African green (#009B77)
+- Secondary: Dark theme (#222222)
+- Accent: Warm African sun (#FFB90F)
 
-## Learn More
+### Animations
+Custom animations available:
+- fadeIn
+- slideIn
+- scaleIn
+- bounce
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+sletchersystems/
+├── app/
+│   ├── contexts/
+│   │   └── ThemeContext.tsx
+│   ├── page1/
+│   ├── page2/
+│   ├── page3/
+│   ├── page4/
+│   ├── page5/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   └── ui/
+├── public/
+└── styles/
+    └── globals.css
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Development
 
-## Deploy on Vercel
+### Prerequisites
+- Node.js 16.8 or later
+- Git
+- npm or yarn
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Environment Setup
+1. Copy `.env.example` to `.env.local`
+2. Update environment variables as needed
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Build
+```bash
+npm run build
+# or
+yarn build
+```
+
+## 📜 License
+MIT License - feel free to use this for learning and development
+
+## 🤝 Contributing
+Pull requests are welcome. For major changes, please open an issue first.
+
+## ⚡️ Performance
+- Optimized images and assets
+- Server-side rendering where beneficial
+- Client-side smooth animations
+- Efficient state management
+
+## 🔒 Security
+- Secure client-side storage
+- Protected API routes
+- Safe form handling
+- Secure subdomain management
+
+## 📞 Contact
+- Website: [sletchersystems.com](https://sletchersystems.com)
+- Email: wsletcher@gmail.com
+- LinkedIn: [Wayne Sletcher](https://www.linkedin.com/in/waynesletcher)
+
+## 🌟 Acknowledgments
+- Icons by [Lucide](https://lucide.dev)
+- Animations inspired by modern web practices
+- Color scheme inspired by South African heritage
+
+---
+
+> "Keep well, keep safe, and keep on." - Wayne Sletcher
+
+Built with 💚 by Sletcher Systems
+```

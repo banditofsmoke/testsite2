@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #009B77;
+  --secondary-color: #222;
+  --accent-color: #FFB90F;
+  --text-color: #333;
+  --bg-color: #f8f8f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -37,4 +62,3 @@
 .animate-bounce {
   animation: bounce 1s infinite;
 }
-
