@@ -4,9 +4,7 @@ import { useState } from 'react'
 import { 
   Brain, 
   Code, 
-  GitBranch, 
-  Bot,
-  Database,
+  GitBranch,
   GraduationCap,
   ExternalLink 
 } from 'lucide-react'
@@ -16,28 +14,36 @@ export default function PortfolioPage() {
 
   const projects = [
     {
-      title: "AI-Powered LMS Platform",
+      title: "Global Defense Network",
+      category: "development",
+      description: "Advanced secure communication system with multi-layered encryption, integrity verification, and AI-powered data processing. Featuring AES-256-GCM encryption and sandboxed AI execution.",
+      status: "Development",
+      tech: ["Python 3.12", "TensorFlow", "Cryptography"],
+      type: "Security Infrastructure"
+    },
+    {
+      title: "Sletchy Assistant",
+      category: "ai",
+      description: "Universal personal AI assistant focused on accessibility and education. Specializing in tiny LLM models and African language support to democratize AI technology access.",
+      status: "Active Development",
+      tech: ["Electron", "Python", "RAG", "TTS/STT"],
+      type: "AI Assistant"
+    },
+    {
+      title: "Educational Platform",
       category: "education",
-      description: "Learning management system with integrated AI for personalized learning paths",
-      status: "In Development",
-      tech: ["Next.js", "Python", "TensorFlow"],
-      type: "Flagship Project"
+      description: "Comprehensive learning management system with integrated AI for personalized learning paths and progress tracking",
+      status: "Live",
+      tech: ["Next.js", "Python", "PostgreSQL"],
+      type: "Education"
     },
     {
       title: "Analytics Dashboard",
       category: "data",
-      description: "Real-time data visualization and reporting system",
-      status: "Planning Phase",
+      description: "Real-time data visualization and reporting system for business intelligence",
+      status: "Planning",
       tech: ["React", "Node.js", "D3.js"],
       type: "Internal Tool"
-    },
-    {
-      title: "Educational API",
-      category: "development",
-      description: "RESTful API service for educational content delivery",
-      status: "Research",
-      tech: ["FastAPI", "PostgreSQL", "Redis"],
-      type: "Infrastructure"
     }
   ]
 
@@ -58,8 +64,8 @@ export default function PortfolioPage() {
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {[
             { id: 'all', label: 'All Projects', icon: Code },
+            { id: 'ai', label: 'AI & ML', icon: Brain },
             { id: 'education', label: 'Education', icon: GraduationCap },
-            { id: 'data', label: 'Data & AI', icon: Brain },
             { id: 'development', label: 'Development', icon: GitBranch }
           ].map(({ id, label, icon: Icon }) => (
             <button
@@ -128,12 +134,12 @@ export default function PortfolioPage() {
             More Projects Coming Soon
           </h2>
           <p className="text-gray-300 mb-4">
-            We're constantly working on new innovations and solutions.
+            We&apos;re constantly working on new innovations and solutions.
             Check back regularly for updates.
           </p>
           <div className="flex justify-center gap-4">
             <a 
-              href="https://github.com/yourusername"
+              href="https://github.com/banditofsmoke"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-white bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-lg transition-all duration-300"

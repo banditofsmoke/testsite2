@@ -1,10 +1,8 @@
 'use client'
 
-import { 
-  Network, 
+import {  
   Shield, 
   Users, 
-  BarChart, 
   Globe,
   Code,
   Brain,
@@ -107,10 +105,10 @@ export default function AboutPage() {
         {/* Company Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-16">
           {[
-            { metric: "95%", label: "Client Satisfaction", icon: Users },
-            { metric: "24/7", label: "Support Coverage", icon: Globe },
-            { metric: "100+", label: "Projects Delivered", icon: Code },
-            { metric: "50+", label: "AI Implementations", icon: Brain }
+            { metric: "100+", label: "Personal Assistants Given Away", icon: Users },
+            { metric: "24/7 AI AGENT", label: "Support Coverage", icon: Globe },
+            { metric: "30+", label: "Projects Delivered", icon: Code },
+            { metric: "30+", label: "AI Implementations", icon: Brain }
           ].map((stat, index) => (
             <div key={index} className="bg-gray-800/80 rounded-xl p-6 text-center">
               <div className="w-12 h-12 rounded-full bg-emerald-600/20 flex items-center justify-center mx-auto mb-4">

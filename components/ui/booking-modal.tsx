@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { ErrorBoundary } from './error-boundary'
+import { Loader } from 'lucide-react'
 
 interface BookingModalProps {
   isOpen: boolean
@@ -9,16 +10,35 @@ interface BookingModalProps {
 }
 
 function CalendarContent() {
+  const [isLoading, setIsLoading] = useState(true)
+
   return (
-    <iframe 
-      src="https://cal.com/sletcher-systems"
-      className="w-full h-[600px] border-0"
-      title="Scheduling Calendar"
-    />
+    <div className="relative">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+          <Loader className="w-8 h-8 text-emerald-400 animate-spin" />
+        </div>
+      )}
+      <iframe 
+        src="https://cal.com/sletcher-systems"
+        className="w-full h-[600px] border-0"
+        title="Scheduling Calendar"
+        onLoad={() => setIsLoading(false)}
+      />
+    </div>
   )
 }
 
 export function BookingModal({ isOpen, onClose }: BookingModalProps) {
+  // Close on escape key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handleEsc)
+    return () => window.removeEventListener('keydown', handleEsc)
+  }, [onClose])
+
   if (!isOpen) return null
 
   return (
@@ -37,8 +57,8 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <button
               onClick={onClose}
               className="text-gray-400 hover:text-white transition-colors"
+              aria-label="Close modal"
             >
-              <span className="sr-only">Close</span>
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
