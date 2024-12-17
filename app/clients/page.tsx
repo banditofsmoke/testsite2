@@ -5,7 +5,6 @@ import { useState } from 'react'
 import { BookingModal } from '@/components/ui/booking-modal'
 
 export default function ClientsPage() {
-  const [activeProject, setActiveProject] = useState<number | null>(null)
   // Add state for booking modal
   const [isBookingOpen, setIsBookingOpen] = useState(false)
 
@@ -25,7 +24,7 @@ export default function ClientsPage() {
               Need a Custom Web Solution?
             </h2>
             <p className="text-gray-300 mb-8">
-              From simple websites to complex web applications, we&apos;ll bring your vision to life.
+              From simple websites to complex web applications, we'll bring your vision to life.
             </p>
             <div className="flex justify-center">
               <button 
