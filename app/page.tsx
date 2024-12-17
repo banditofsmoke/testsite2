@@ -1,20 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { LucideBookOpen, LucideHammer, LucideLayoutDashboard, LucideBolt } from "lucide-react";
 
 const Page = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleScroll = () => setScrollPosition(window.scrollY);
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
-  }, []);
-
-  const handleBookingClick = () => setIsBookingModalOpen(true);
+  const handleBookingClick = () => {
+    console.log('Booking clicked');
+  };
 
   const features = [
     {

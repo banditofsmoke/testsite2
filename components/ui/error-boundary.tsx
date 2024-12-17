@@ -15,9 +15,11 @@ export class ErrorBoundary extends Component<Props, State> {
     hasError: false
   }
 
-  public static getDerivedStateFromError(_: Error): State {
-    return { hasError: true }
-  }
+    // To:
+    public static getDerivedStateFromError(error: Error): State {
+        console.error('Error caught in boundary:', error);
+        return { hasError: true }
+    }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('Error caught:', error, errorInfo)
