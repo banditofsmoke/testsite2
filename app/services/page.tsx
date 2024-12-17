@@ -3,23 +3,12 @@
 import { useState } from 'react'
 import { 
   Brain, 
-  GraduationCap, 
   Code, 
   Database,
   Network,
-  LineChart,
-  Settings,
-  Users,
-  Lock,
   ShieldCheck,
-  Clock,
   BarChart,
-  CloudCog,
-  ScrollText,
-  Bot,
-  Cpu,
   Globe,
-  ExternalLink,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react'

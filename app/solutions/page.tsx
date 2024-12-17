@@ -11,10 +11,6 @@ import {
   Database,
   Sparkles,
   Lock,
-  Cloud,
-  Bot,
-  Network,
-  Globe
 } from 'lucide-react'
 import { BookingModal } from '@/components/ui/booking-modal'
 

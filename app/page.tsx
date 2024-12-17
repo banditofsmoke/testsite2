@@ -6,7 +6,6 @@ import { ErrorBoundary } from '@/components/ui/error-boundary'
 import { 
   Brain, 
   Shield, 
-  Network,
   Code,
   GraduationCap,
   Sparkles,
@@ -16,11 +15,8 @@ import {
   Globe,
   Lock,
   Bot,
-  Cpu,
-  BarChart,
   BookOpen,
   Share2,
-  MessageSquare,
   Zap,
   CloudCog
 } from 'lucide-react'

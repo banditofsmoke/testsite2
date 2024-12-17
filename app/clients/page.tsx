@@ -1,14 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { 
-  Globe, 
-  Layout, 
-  Smartphone, 
-  ExternalLink,
-  CheckCircle2 
-} from 'lucide-react'
-
 // Add BookingModal import
 import { BookingModal } from '@/components/ui/booking-modal'
 
