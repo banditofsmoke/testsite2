@@ -106,7 +106,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-4 gap-6 mb-16">
           {[
             { metric: "100+", label: "Personal Assistants Given Away", icon: Users },
-            { metric: "24/7 AI AGENT", label: "Support Coverage", icon: Globe },
+            { metric: "Agentic Support", label: "24/7 Support", icon: Globe },
             { metric: "30+", label: "Projects Delivered", icon: Code },
             { metric: "30+", label: "AI Implementations", icon: Brain }
           ].map((stat, index) => (
