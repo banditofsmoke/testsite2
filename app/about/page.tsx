@@ -30,19 +30,19 @@ export default function AboutPage() {
           {[
             {
               title: "Our Mission",
-              description: "To revolutionize education and business through innovative technology solutions that drive real-world results",
+              description: "To revolutionize education and business through innovative technology solutions that drive real-world results.",
               icon: Rocket,
               color: "emerald"
             },
             {
               title: "Our Vision",
-              description: "To be the leading force in educational technology and AI integration, setting new standards for digital transformation",
+              description: "To be the leading force in educational technology and AI integration, setting new standards for digital transformation.",
               icon: Brain,
               color: "blue"
             },
             {
               title: "Our Values",
-              description: "Excellence, innovation, and integrity in every solution we deliver",
+              description: "Ethics, Philosophy, Excellence, innovation, and integrity in every solution we deliver.",
               icon: Shield,
               color: "purple"
             }
@@ -64,15 +64,15 @@ export default function AboutPage() {
             {[
               {
                 title: "AI & Machine Learning",
-                points: ["Custom ML Models", "NLP Solutions", "AI Integration"]
+                points: ["Digital Agents","Custom ML Models", "NLP Solutions", "Vision models","TTS-STT","RAG Systems"]
               },
               {
                 title: "Educational Technology",
-                points: ["Learning Platforms", "Analytics Systems", "Interactive Content"]
+                points: ["Learning Platforms", "Analytics Systems", "Breaking Cultural Barriers","Live Audio Transcipts","Real-time learning feedback"]
               },
               {
                 title: "Custom Development",
-                points: ["Full Stack Solutions", "API Development", "Cloud Infrastructure"]
+                points: ["Full Stack Solutions", "API Development", "Cloud Infrastructure","PoC Development"]
               },
               {
                 title: "Data Science",
