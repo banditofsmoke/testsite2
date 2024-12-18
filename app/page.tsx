@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { LucideBookOpen, LucideHammer, LucideLayoutDashboard, LucideBolt } from "lucide-react";
+import { BookingModal } from '@/components/ui/booking-modal';
 
 const Page = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   const handleBookingClick = () => {
-    console.log('Booking clicked');
+    setIsBookingOpen(true);
   };
 
   const features = [
@@ -50,7 +53,7 @@ const Page = () => {
     "RAG Systems",
     "Fine-Tuning",
     "AI Pipelines",
-    "Software Development",
+    "Software Development"
   ];
 
   return (
@@ -67,7 +70,7 @@ const Page = () => {
           </p>
           <button
             onClick={handleBookingClick}
-            className="group relative inline-flex items-center px-8 py-4 bg-emerald-500 overflow-hidden rounded-lg transition-all duration-300 hover:bg-emerald-600"
+            className="group relative inline-flex items-center px-8 py-6 bg-emerald-500 overflow-hidden rounded-lg transition-all duration-300 hover:bg-emerald-600"
           >
             <span className="relative z-10">Book a Consultation</span>
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
@@ -148,6 +151,12 @@ const Page = () => {
           </p>
         </div>
       </section>
+
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+      />
     </main>
   );
 };
