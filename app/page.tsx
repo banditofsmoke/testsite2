@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { LucideBookOpen, LucideHammer, LucideLayoutDashboard, LucideBolt } from "lucide-react";
 import { BookingModal } from '@/components/ui/booking-modal';
+import HuggingFaceWidget from '@/components/ui/huggingface-widget';
 
 interface TooltipProps {
   content: string;
@@ -58,10 +59,10 @@ const Page = () => {
     { name: "PyTorch", description: "Deep learning framework for AI development" },
     { name: "LangChain", description: "Framework for developing LLM-powered applications" },
     { name: "RAG", description: "Retrieval Augmented Generation for enhanced AI responses" },
-    { name: "LLMs", description: "Large Language Models for natural language processing" },
+    { name: "Transformers", description: "Frameworks for interfacing with state-of-the-art pretrained models" },
     { name: "Ollama", description: "Run large language models locally" },
     { name: "LangSmith", description: "Platform for LLM application development" },
-    { name: "Unsloth", description: "Optimization toolkit for LLMs" },
+    { name: "AutoTrainer", description: "Optimization toolkit for LLMs" },
     { name: "PydanticAI", description: "Data validation for AI applications" },
     { name: "GraphRAG", description: "Graph-based retrieval for AI systems" },
     { name: "Neural Networks", description: "AI systems modeled on human brain function" },
@@ -69,10 +70,10 @@ const Page = () => {
 
   const specializations = [
     { name: "Agentic Workflows", description: "Automated AI-driven process management" },
-    { name: "Code Automation", description: "Automated software development and testing" },
+    { name: "Training Dataset Curation", description: "Datasets collected, generated and augmented for custom domain specific models" },
     { name: "RAG Systems", description: "Enhanced AI systems with real-time data retrieval" },
-    { name: "Fine-Tuning", description: "Customizing AI models for specific use cases" },
-    { name: "AI Pipelines", description: "End-to-end AI processing systems" },
+    { name: "Cyber Security Solutions", description: "Securing networks" },
+    { name: "Website Development", description: "Custom websites, built to your satisfacion" },
     { name: "Software Development", description: "Custom software solutions and applications" }
   ];
 
@@ -95,6 +96,18 @@ const Page = () => {
             <span className="relative z-10">Book a Consultation</span>
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
           </button>
+        </div>
+      </section>
+
+      {/* Interactive Demo Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
+            Try Our AI Demo
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <HuggingFaceWidget />
+          </div>
         </div>
       </section>
 
@@ -174,7 +187,7 @@ const Page = () => {
       <section className="py-24 bg-gray-950">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
-            Our Vision
+            Contact Us TODAY!
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed">
             To drive innovation and empower businesses with AI-driven, scalable solutions that redefine success.
