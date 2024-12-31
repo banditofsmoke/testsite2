@@ -60,7 +60,7 @@ function NavigationLink({ href, children }: { href: string; children: React.Reac
     <li className="animate-slide-in">
       <Link 
         href={href} 
-        className="text-white hover:text-emerald-400 transition-colors duration-300 font-bold px-4 py-2"
+        className="text-white hover:text-emerald-400 transition-colors duration-300 font-bold text-xl px-8 py-6 block tracking-wide"
       >
         {children}
       </Link>
@@ -100,7 +100,7 @@ export default function RootLayout({
             <ThemeToggle />
             
             <header className="bg-gray-900/90 backdrop-blur-sm text-white fixed w-full top-0 z-40 border-b border-gray-800">
-              <nav className="container mx-auto px-6 py-4">
+              <nav className="container mx-auto px-10 py-10">
                 <ul className="flex justify-end space-x-8">
                   {navLinks.map((link) => (
                     <NavigationLink key={link.href} href={link.href}>

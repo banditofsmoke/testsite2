@@ -21,6 +21,20 @@ body {
   color: var(--text-color);
 }
 
+.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.light {
+  --bg-color: #f8f8f8;
+  --text-color: #333333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
