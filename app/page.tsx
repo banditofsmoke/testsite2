@@ -103,7 +103,7 @@ const Page = () => {
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
-            THE BELOW IS FALSE!!! Hallucination HERE. Updating LLM and Datasets is in progress. Will be done within the next 7days - Jan 08th.
+            Interactive AI Demo
           </h2>
           <div className="max-w-4xl mx-auto">
             <HuggingFaceWidget />
