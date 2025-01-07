@@ -3,11 +3,21 @@
 import { useState } from 'react'
 import { BookingModal } from '@/components/ui/booking-modal'
 
+interface Product {
+  id: string;
+  title: string;
+  price?: number;
+  description: string;
+  badge?: string;
+  features: string[];
+  includes: string[];
+}
+
 export default function ProductsPage() {
   const [activeProduct, setActiveProduct] = useState<string | null>(null)
   const [isBookingOpen, setIsBookingOpen] = useState(false)
 
-  const products = [
+  const products: Product[] = [
     {
       id: 'student-ai',
       title: 'Student Study Assistant',
@@ -32,7 +42,7 @@ export default function ProductsPage() {
     },
     {
       id: 'rag-pro',
-      title: 'Personal AI Assistant Pro',
+      title: 'RAG Assistant Pro',
       price: 300,
       description: 'Professional RAG system for individuals and small teams. Perfect for specialized knowledge domains.',
       features: [
@@ -119,7 +129,7 @@ export default function ProductsPage() {
             >
               <div className="flex justify-between items-start mb-6">
                 <h2 className="text-2xl font-bold text-white">{product.title}</h2>
-                {['student-ai', 'rag-pro'].includes(product.id) ? (
+                {['student-ai', 'rag-pro'].includes(product.id) && product.price ? (
                   <div className="text-2xl font-bold text-emerald-400">
                     ${product.price.toLocaleString()}
                   </div>
