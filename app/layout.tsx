@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
-// Navigation configurations for different subdomains
 const navigationConfigs = {
   main: [
     { href: '/', label: 'Home' },
@@ -44,12 +43,12 @@ function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-6 left-6 z-50 w-12 h-12 rounded-full flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 transition-all duration-300 shadow-lg animate-fade-in"
+      className="fixed top-3 md:top-6 left-3 md:left-6 z-50 w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 transition-all duration-300 shadow-lg animate-fade-in"
       aria-label="Toggle theme"
     >
       {isDarkMode ? 
-        <Sun className="w-6 h-6 text-white" /> : 
-        <Moon className="w-6 h-6 text-white" />
+        <Sun className="w-4 h-4 md:w-6 md:h-6 text-white" /> : 
+        <Moon className="w-4 h-4 md:w-6 md:h-6 text-white" />
       }
     </button>
   )
@@ -60,7 +59,7 @@ function NavigationLink({ href, children }: { href: string; children: React.Reac
     <li className="animate-slide-in">
       <Link 
         href={href} 
-        className="text-white hover:text-emerald-400 transition-colors duration-300 font-bold text-xl px-8 py-6 block tracking-wide"
+        className="text-white hover:text-emerald-400 transition-colors duration-300 font-bold text-sm md:text-xl px-2 md:px-8 py-3 md:py-6 block tracking-wide"
       >
         {children}
       </Link>
@@ -100,8 +99,8 @@ export default function RootLayout({
             <ThemeToggle />
             
             <header className="bg-gray-900/90 backdrop-blur-sm text-white fixed w-full top-0 z-40 border-b border-gray-800">
-              <nav className="container mx-auto px-10 py-10">
-                <ul className="flex justify-end space-x-8">
+              <nav className="container mx-auto px-4 md:px-10 py-4 md:py-10">
+                <ul className="flex flex-wrap justify-end space-x-2 md:space-x-8">
                   {navLinks.map((link) => (
                     <NavigationLink key={link.href} href={link.href}>
                       {link.label}
@@ -111,18 +110,18 @@ export default function RootLayout({
               </nav>
             </header>
 
-            <main className="pt-16">
+            <main className="pt-20 md:pt-32">
               {children}
             </main>
 
-            <footer className="bg-gray-900/90 backdrop-blur-sm text-white py-8 text-center border-t border-gray-800">
-              <div className="container mx-auto px-6">
-                <p className="animate-fade-in">
+            <footer className="bg-gray-900/90 backdrop-blur-sm text-white py-6 md:py-8 text-center border-t border-gray-800">
+              <div className="container mx-auto px-4 md:px-6">
+                <p className="animate-fade-in text-sm md:text-base">
                   &copy; 2024 Sletcher Systems. 
                   {subdomain === 'anthony' && ' Personal Space'}
                   {!subdomain && ' Proudly South African, Globally Connected.'}
                 </p>
-                <p className="mt-2 animate-fade-in delay-100">We Accept BTC and ETH.</p>
+                <p className="mt-2 animate-fade-in delay-100 text-sm md:text-base">We Accept BTC and ETH.</p>
               </div>
             </footer>
           </div>
