@@ -103,6 +103,24 @@ export default function ProductsPage() {
     }
   ]
 
+  const renderPrice = (product: Product) => {
+    if (product.price && ['student-ai', 'rag-pro'].includes(product.id)) {
+      return (
+        <div className="text-2xl font-bold text-emerald-400">
+          ${product.price.toLocaleString()}
+        </div>
+      )
+    }
+    return (
+      <button
+        onClick={() => setIsBookingOpen(true)}
+        className="text-emerald-400 hover:text-emerald-300 transition-colors font-semibold"
+      >
+        Schedule Consultation
+      </button>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
@@ -129,18 +147,7 @@ export default function ProductsPage() {
             >
               <div className="flex justify-between items-start mb-6">
                 <h2 className="text-2xl font-bold text-white">{product.title}</h2>
-                {['student-ai', 'rag-pro'].includes(product.id) && product.price ? (
-                  <div className="text-2xl font-bold text-emerald-400">
-                    ${product.price.toLocaleString()}
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => setIsBookingOpen(true)}
-                    className="text-emerald-400 hover:text-emerald-300 transition-colors font-semibold"
-                  >
-                    Schedule Consultation
-                  </button>
-                )}
+                {renderPrice(product)}
               </div>
               
               {product.badge && (
