@@ -13,7 +13,7 @@ const navigationConfigs = {
   main: [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About Us' },
-    { href: '/services', label: 'Services' },
+    { href: '/products', label: 'Products' },
     { href: '/solutions', label: 'Solutions' },
     { href: '/clients', label: 'Clients' }
   ],
