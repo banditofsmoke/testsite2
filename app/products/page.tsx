@@ -42,9 +42,9 @@ export default function ProductsPage() {
     },
     {
       id: 'rag-pro',
-      title: 'RAG Assistant Pro',
-      price: 300,
-      description: 'Professional RAG system for individuals and small teams. Perfect for specialized knowledge domains.',
+      title: 'Personalized RAG Assistant Pro',
+      price: 500,
+      description: 'Professional RAG system for individuals. Perfect for specialized knowledge domains.',
       features: [
         'Custom-trained RAG System',
         'Advanced TTS/STT',
@@ -57,7 +57,6 @@ export default function ProductsPage() {
         'Lifetime Access',
         'Apache 2.0 License',
         'Monthly Updates',
-        'Two Device License',
         'Priority Support'
       ]
     },
