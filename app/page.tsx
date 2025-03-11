@@ -75,26 +75,26 @@ export default function Page() {
 
   return (
     <main className="bg-gray-950 text-white">
-      {/* Hero Section */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center relative">
+      {/* Hero Section - reduced height */}
+      <section className="min-h-[50vh] flex flex-col items-center justify-center relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-950" />
         <div className="relative z-10 text-center px-8 max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
             Your Code Solutions Partner
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-gray-300">
+          <p className="text-lg md:text-xl mb-6 text-gray-300">
             Empowering students and businesses with cutting-edge AI and automation software.
           </p>
           <div className="flex gap-4 justify-center">
             <button
               onClick={() => setIsBookingOpen(true)} 
-              className="group inline-flex items-center px-8 py-4 bg-emerald-500 rounded-lg transition-all duration-300 hover:bg-emerald-600"
+              className="group inline-flex items-center px-8 py-3 bg-emerald-500 rounded-lg transition-all duration-300 hover:bg-emerald-600"
             >
               <span className="relative z-10">Book a Consultation</span>
             </button>
             <a 
               href="/about"
-              className="group inline-flex items-center px-8 py-4 border border-emerald-500 rounded-lg transition-all duration-300 hover:bg-emerald-500/10"
+              className="group inline-flex items-center px-8 py-3 border border-emerald-500 rounded-lg transition-all duration-300 hover:bg-emerald-500/10"
             >
               <span className="relative z-10">Learn More</span>
             </a>
@@ -102,8 +102,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-gray-900">
+      {/* Services Section - reduced padding */}
+      <section className="py-12 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
             Our Services
@@ -120,8 +120,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Tech Stack Section */}
-      <section className="py-20 bg-gray-950">
+      {/* Tech Stack Section - reduced padding */}
+      <section className="py-12 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
             Our Tech Stack
@@ -138,8 +138,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Specializations Section */}
-      <section className="py-20 bg-gray-900">
+      {/* Specializations Section - reduced padding */}
+      <section className="py-12 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
             Specializations
