@@ -75,7 +75,8 @@ export default function Page() {
 
   return (
     <main className="bg-gray-950 text-white">
-      <section className="min-h-screen flex flex-col items-center justify-center relative">
+      {/* Hero Section */}
+      <section className="min-h-[80vh] flex flex-col items-center justify-center relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-950" />
         <div className="relative z-10 text-center px-8 max-w-4xl">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
@@ -84,25 +85,25 @@ export default function Page() {
           <p className="text-lg md:text-xl mb-8 text-gray-300">
             Empowering students and businesses with cutting-edge AI and automation software.
           </p>
-          <button onClick={() => setIsBookingOpen(true)} 
-            className="group inline-flex items-center px-8 py-6 bg-emerald-500 rounded-lg transition-all duration-300 hover:bg-emerald-600">
-            <span className="relative z-10">Book a Consultation</span>
-          </button>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
-            Interactive AI Demo
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            {/* HuggingFaceWidget component removed */}
+          <div className="flex gap-4 justify-center">
+            <button
+              onClick={() => setIsBookingOpen(true)} 
+              className="group inline-flex items-center px-8 py-4 bg-emerald-500 rounded-lg transition-all duration-300 hover:bg-emerald-600"
+            >
+              <span className="relative z-10">Book a Consultation</span>
+            </button>
+            <a 
+              href="/about"
+              className="group inline-flex items-center px-8 py-4 border border-emerald-500 rounded-lg transition-all duration-300 hover:bg-emerald-500/10"
+            >
+              <span className="relative z-10">Learn More</span>
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-900">
+      {/* Services Section */}
+      <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
             Our Services
@@ -119,12 +120,13 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-950">
+      {/* Tech Stack Section */}
+      <section className="py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
-            Tech Stack
+            Our Tech Stack
           </h2>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
             {techStack.map((tech, index) => (
               <Tooltip key={index} content={tech.description}>
                 <span className="px-6 py-3 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-800 transition-all duration-300">
@@ -136,15 +138,16 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-900">
+      {/* Specializations Section */}
+      <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
             Specializations
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {specializations.map((spec, index) => (
               <Tooltip key={index} content={spec.description}>
-                <div className="p-6 bg-gray-800/50 rounded-xl text-gray-300 hover:bg-gray-800 transition-all duration-300 text-center">
+                <div className="p-6 bg-gray-800/50 rounded-xl text-gray-300 hover:bg-gray-800 transition-all duration-300 text-center cursor-pointer">
                   {spec.name}
                 </div>
               </Tooltip>
