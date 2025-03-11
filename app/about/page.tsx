@@ -1,135 +1,137 @@
 'use client'
 
-import {  
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { 
+  BookOpen, 
+  Brain, 
+  Code2, 
+  Database, 
+  Laptop, 
+  LineChart,
+  School,
+  Users,
   Shield, 
-  Users, 
   Globe,
   Code,
-  Brain,
   Rocket,
   CheckCircle
 } from 'lucide-react'
 
+const aboutSections = [
+  {
+    title: "Education",
+    icon: School,
+    content: "Teaching experience spanning multiple subjects with a focus on technology and programming."
+  },
+  {
+    title: "AI Development",
+    icon: Brain,
+    content: "Expertise in machine learning, neural networks, and AI system development."
+  },
+  {
+    title: "Software Engineering",
+    icon: Code2,
+    content: "Full-stack development with modern technologies and frameworks."
+  },
+  {
+    title: "Data Science",
+    icon: Database,
+    content: "Data analysis, visualization, and predictive modeling."
+  }
+]
+
+const skills = [
+  {
+    category: "Programming",
+    icon: Laptop,
+    items: ["Python", "JavaScript", "TypeScript", "C#", "SQL"]
+  },
+  {
+    category: "AI & ML",
+    icon: Brain,
+    items: ["TensorFlow", "PyTorch", "Scikit-learn", "LangChain", "RAG Systems"]
+  },
+  {
+    category: "Education",
+    icon: BookOpen,
+    items: ["Curriculum Development", "Student Assessment", "Educational Technology", "Mentoring"]
+  },
+  {
+    category: "Business",
+    icon: LineChart,
+    items: ["Project Management", "Team Leadership", "Strategic Planning", "Client Relations"]
+  }
+]
+
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 dark:from-gray-100 dark:to-blue-100">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Hero Section */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Pioneering Digital Innovation
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold text-white dark:text-gray-900 mb-4">
+            About Us
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Sletcher Systems is at the forefront of AI-driven educational technology and custom software solutions.
-            We transform ideas into powerful, scalable realities.
+          <p className="text-xl text-gray-300 dark:text-gray-700 max-w-3xl mx-auto">
+            Combining education, technology, and innovation to create impactful solutions.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Company Overview Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {[
-            {
-              title: "Our Mission",
-              description: "To revolutionize education and business through innovative technology solutions that drive real-world results.",
-              icon: Rocket,
-              color: "emerald"
-            },
-            {
-              title: "Our Vision",
-              description: "To be the leading force in educational technology and AI integration, setting new standards for digital transformation.",
-              icon: Brain,
-              color: "blue"
-            },
-            {
-              title: "Our Values",
-              description: "Ethics, Philosophy, Excellence, innovation, and integrity in every solution we deliver.",
-              icon: Shield,
-              color: "purple"
-            }
-          ].map((item, index) => (
-            <div key={index} className="bg-gray-800/80 rounded-xl p-8 transform hover:scale-105 transition-all">
-              <div className={`w-12 h-12 rounded-full bg-${item.color}-600/20 flex items-center justify-center mb-4`}>
-                <item.icon className={`w-6 h-6 text-${item.color}-400`} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-              <p className="text-gray-300">{item.description}</p>
-            </div>
+        {/* Main Sections Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {aboutSections.map((section, index) => (
+            <motion.div
+              key={section.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-gray-800/80 dark:bg-white/80 rounded-xl p-6 hover:transform hover:scale-105 transition-all"
+            >
+              <section.icon className="w-12 h-12 text-emerald-400 mb-4" />
+              <h2 className="text-xl font-bold text-white dark:text-gray-900 mb-2">
+                {section.title}
+              </h2>
+              <p className="text-gray-300 dark:text-gray-700">
+                {section.content}
+              </p>
+            </motion.div>
           ))}
         </div>
 
-        {/* Core Competencies */}
-        <div className="bg-gray-800/80 rounded-xl p-8 mb-16">
-          <h2 className="text-2xl font-bold text-white mb-8">Core Competencies</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "AI & Machine Learning",
-                points: ["Digital Agents","Custom ML Models", "NLP Solutions", "Vision models","TTS-STT","RAG Systems"]
-              },
-              {
-                title: "Educational Technology",
-                points: ["Learning Platforms", "Analytics Systems", "Breaking Cultural Barriers","Live Audio Transcipts","Real-time learning feedback"]
-              },
-              {
-                title: "Custom Development",
-                points: ["Full Stack Solutions", "API Development", "Cloud Infrastructure","PoC Development"]
-              },
-              {
-                title: "Data Science",
-                points: ["Big Data Analytics", "Predictive Modeling", "Data Visualization"]
-              },
-              {
-                title: "Security",
-                points: ["Enterprise Security", "Data Protection", "Compliance"]
-              },
-              {
-                title: "Support",
-                points: ["24/7 Assistance", "Training", "Maintenance"]
-              }
-            ].map((competency, index) => (
-              <div key={index} className="bg-gray-900/50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-white mb-4">{competency.title}</h3>
+        {/* Skills Section */}
+        <div className="bg-gray-800/80 dark:bg-white/80 rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-white dark:text-gray-900 mb-8 text-center">
+            Our Expertise
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.category}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <skill.icon className="w-6 h-6 text-emerald-400" />
+                  <h3 className="text-xl font-semibold text-white dark:text-gray-900">
+                    {skill.category}
+                  </h3>
+                </div>
                 <ul className="space-y-2">
-                  {competency.points.map((point, pIndex) => (
-                    <li key={pIndex} className="flex items-center text-gray-300">
-                      <CheckCircle className="w-4 h-4 text-emerald-400 mr-2" />
-                      {point}
+                  {skill.items.map((item, i) => (
+                    <li key={i} className="text-gray-300 dark:text-gray-700 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+                      {item}
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
-
-        {/* Company Stats */}
-        <div className="grid md:grid-cols-4 gap-6 mb-16">
-          {[
-            { metric: "100+", label: "Personal Assistants Given Away", icon: Users },
-            { metric: "Agentic Support", label: "24/7 Support", icon: Globe },
-            { metric: "30+", label: "Projects Delivered", icon: Code },
-            { metric: "30+", label: "AI Implementations", icon: Brain }
-          ].map((stat, index) => (
-            <div key={index} className="bg-gray-800/80 rounded-xl p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-emerald-600/20 flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-6 h-6 text-emerald-400" />
-              </div>
-              <div className="text-2xl font-bold text-white mb-2">{stat.metric}</div>
-              <div className="text-gray-300">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Global Presence */}
-        <div className="bg-gradient-to-r from-emerald-900/50 to-blue-900/50 rounded-xl p-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Global Reach, Local Impact</h2>
-          <p className="text-gray-300 mb-6">
-            Proudly South African, globally connected. Our solutions reach across continents,
-            bringing innovation to organizations worldwide.
-          </p>
-          <div className="inline-flex items-center text-emerald-400">
-            <Globe className="w-5 h-5 mr-2" />
-            Serving clients worldwide
           </div>
         </div>
       </div>
