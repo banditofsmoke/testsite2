@@ -75,6 +75,26 @@ export default function ClientsPage() {
                 </button>
               </div>
             </div>
+
+            {/* Sales Recruitment Section */}
+            <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-xl p-12 text-center">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Join Our Sales Team
+              </h2>
+              <p className="text-gray-300 mb-8">
+                Looking for ambitious sales professionals. Earn competitive commission-based income while representing cutting-edge tech solutions.
+              </p>
+              <div className="flex justify-center">
+                <a 
+                  href="https://marketing.sletchersystems.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+                >
+                  Apply Now
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
