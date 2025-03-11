@@ -45,7 +45,7 @@ const productInfo = {
     },
     {
       title: 'Privacy Focused',
-      description: 'Your data stays secure and private'
+      description: 'Your data stays secure, offline and private'
     }
   ]
 }
