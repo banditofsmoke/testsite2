@@ -8,15 +8,19 @@ const productInfo = {
     'Smart Document Processing - Handle PDFs, Word docs, and more',
     'Voice Commands and Text-to-Speech',
     'Visual Content Understanding',
-    'Built-in Code Assistant',
-    'Automated Task Management',
-    'Multi-Language Support'
+    'Persistent Semantic Memory',
+    'OCR and YOLO vision',
+    'Interactive Dashboard with Real-Time analytics',
+    'Automated Task Management - basic agentic automation',
+    'Offline Ready - Some tools require connection though, ie. weather, web scraper, ect',
+    'Multi-Language Support - English, Afrikaans, Zulu, Xosha + MANY MORE'
   ],
   technicalFeatures: [
     'Enterprise-Grade Security',
     'Cloud and Local Deployment Options',
     'Real-Time Processing Engine',
     'Advanced AI Knowledge Base',
+    'Custom Trained LLMs',
     'Custom Integration Options',
     'Scalable Architecture',
     'Privacy-First Design',
