@@ -126,7 +126,7 @@ export default function Page() {
           <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">
             Our Tech Stack
           </h2>
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
             {techStack.map((tech, index) => (
               <Tooltip key={index} content={tech.description}>
                 <span className="px-6 py-3 bg-gray-800/50 text-gray-300 rounded-lg hover:bg-gray-800 transition-all duration-300">
