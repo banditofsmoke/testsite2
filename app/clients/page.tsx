@@ -95,6 +95,26 @@ export default function ClientsPage() {
                 </a>
               </div>
             </div>
+
+            {/* Demo Template Section */}
+            <div className="bg-gradient-to-r from-cyan-900/50 to-teal-900/50 rounded-xl p-12 text-center">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                View Our Template Demos
+              </h2>
+              <p className="text-gray-300 mb-8">
+                Explore our professional website templates and see how we can customize them for your business.
+              </p>
+              <div className="flex justify-center">
+                <a 
+                  href="https://cooling.sletchersystems.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-teal-600 hover:bg-teal-500 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+                >
+                  View Demo Site
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
