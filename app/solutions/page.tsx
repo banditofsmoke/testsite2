@@ -5,70 +5,72 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const solutions = [
   {
-    id: 'ai',
-    title: 'AI Solutions',
-    description: 'Cutting-edge AI assistants and automation systems',
-    features: [
-      'Custom AI Assistants with RAG capabilities',
-      'Automated Document Processing & Analysis',
-      'AI-Powered Educational Tools',
-      'Business Process Automation',
-      'Natural Language Understanding Systems',
-      'Computer Vision Solutions'
-    ]
-  },
-  {
     id: 'web',
     title: 'Web Development',
-    description: 'Modern, scalable web applications',
+    description: 'Elevate your digital presence with modern, scalable web solutions',
     features: [
-      'Dynamic React/Next.js Applications',
-      'E-commerce Platforms',
-      'Content Management Systems',
-      'API Development & Integration',
-      'Real-time Communication Systems',
-      'Progressive Web Apps'
+      'Next.js Enterprise Applications',
+      'Custom E-commerce Platforms',
+      'Headless CMS Integration',
+      'RESTful & GraphQL APIs',
+      'Real-time System Architecture',
+      'Progressive Web Applications'
     ]
   },
   {
-    id: 'data',
-    title: 'Data Solutions',
-    description: 'Comprehensive data management and analytics',
+    id: 'games',
+    title: 'Game Development',
+    description: 'Transform your ideas into immersive gaming experiences',
     features: [
-      'Custom Database Design',
-      'Data Pipeline Development',
-      'Business Intelligence Dashboards',
-      'Machine Learning Integration',
-      'Predictive Analytics',
-      'Data Visualization Tools'
+      'Unity Engine Development',
+      'Unreal Engine Solutions',
+      'Python Game Development',
+      'Cross-Platform Deployment',
+      'Advanced Game AI Systems',
+      'Interactive Learning Games',
+      'Mobile Game Solutions',
+      'Analytics & Monetization'
+    ]
+  },
+  {
+    id: 'ai',
+    title: 'AI Integration',
+    description: 'Harness the power of AI to revolutionize your business',
+    features: [
+      'RAG-Enhanced AI Assistants',
+      'Intelligent Document Processing',
+      'Machine Learning Solutions',
+      'Process Automation Systems',
+      'Natural Language Processing',
+      'Computer Vision Applications'
+    ]
+  },
+  {
+    id: 'teaching',
+    title: 'Teaching Services',
+    description: 'Accelerate your tech journey with personalized education',
+    features: [
+      'One-on-One Tech Mentoring',
+      'Web Development Masterclass',
+      'AI & ML Foundations',
+      'Game Development Essentials',
+      'Python Programming Excellence',
+      'Full-Stack Development',
+      'Flexible Online Sessions',
+      'Project-Based Learning'
     ]
   },
   {
     id: 'consulting',
     title: 'Tech Consulting',
-    description: 'Strategic technology guidance',
+    description: 'Expert guidance for your digital transformation journey',
     features: [
-      'Digital Transformation Strategy',
-      'AI Implementation Planning',
-      'Security & Compliance Assessment',
-      'Technology Stack Optimization',
-      'Performance Optimization',
-      'Team Training & Support'
-    ]
-  },
-  {
-    id: 'teaching',
-    title: 'Tech Education',
-    description: 'Personalized technology and AI education',
-    features: [
-      'Machine Learning & AI Fundamentals',
-      'Python Programming for Data Science',
-      'Deep Learning & Neural Networks',
-      'Natural Language Processing (NLP)',
-      'Computer Vision & Image Processing',
-      'Project-Based Learning with Real Applications',
-      'One-on-One Mentoring Sessions',
-      'Custom Learning Path Development'
+      'Technology Strategy Planning',
+      'AI Implementation Roadmap',
+      'Architecture Optimization',
+      'Performance Enhancement',
+      'Security Best Practices',
+      'Team Upskilling Programs'
     ]
   }
 ]
