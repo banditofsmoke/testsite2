@@ -61,7 +61,7 @@ export default function ClientsPage() {
                 Modern business website template with integrated CMS
               </p>
               <a 
-                href="https://cooling.sletchersystems.com/"
+                href="https://demosite.sletchersystems.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-emerald-400 group-hover:text-emerald-300"
