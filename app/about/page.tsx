@@ -45,22 +45,22 @@ const skills = [
   {
     category: "Programming",
     icon: Laptop,
-    items: ["Python", "JavaScript", "TypeScript", "C#", "SQL"]
+    items: ["Chatbots", "Python", "JavaScript", "TypeScript", "C#", "SQL"]
   },
   {
     category: "AI & ML",
     icon: Brain,
-    items: ["TensorFlow", "PyTorch", "Scikit-learn", "LangChain", "RAG Systems"]
+    items: ["Chatbots", "TensorFlow", "PyTorch", "LlamaIndex", "LangChain", "RAG Systems"]
   },
   {
     category: "Education",
     icon: BookOpen,
-    items: ["Curriculum Development", "Student Assessment", "Educational Technology", "Mentoring"]
+    items: ["Curriculum Development", "Student Assessment", "Educational Technology", "Mentoring", "General Teaching"]
   },
   {
     category: "Business",
     icon: LineChart,
-    items: ["Project Management", "Team Leadership", "Strategic Planning", "Client Relations"]
+    items: ["Project Management AI Agents", "Document Ingestion", "LLM Model training", "Task Automation"]
   }
 ]
 
