@@ -1,7 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { BookingModal } from '@/components/ui/booking-modal'
+import Link from 'next/link';
+import Image from 'next/image';
 
 const productInfo = {
   features: [
@@ -13,7 +15,7 @@ const productInfo = {
     'Interactive Dashboard with Real-Time analytics',
     'Automated Task Management - basic agentic automation',
     'Offline Ready - Some tools require connection though, ie. weather, web scraper, ect',
-    'Multi-Language Support - English, Afrikaans, Zulu, Xosha + MANY MORE'
+    'Multi-Language Support - English, Afrikaans, Zulu, Xhosa + MANY MORE'
   ],
   technicalFeatures: [
     'Enterprise-Grade Security',
@@ -118,9 +120,97 @@ export default function ProductsPage() {
             </div>
           ))}
         </div>
-      </div>
 
-      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+        {/* Projects section */}
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold mb-12 text-center text-white">Our Projects</h2>
+          
+          {/* Cognitive Cartography System */}
+          <div className="mb-16 p-6 border border-blue-800 rounded-xl shadow-md bg-blue-950/70">
+            <h2 className="text-3xl font-semibold mb-4 text-white">Cognitive Cartography System</h2>
+            
+            <div className="flex flex-col md:flex-row gap-6 mb-8">
+              <div className="md:w-1/2">
+                <Image 
+                  src="/cognitive-cartography.png" 
+                  alt="Cognitive Cartography System" 
+                  width={600} 
+                  height={400} 
+                  className="rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="md:w-1/2">
+                <p className="mb-4 text-gray-200">
+                  Mind mapping plays a crucial role in helping maintain a clear overview of complex problems, 
+                  ideas, and information. By visualizing the interconnections between different concepts, 
+                  we can better understand and process intricate subjects.
+                </p>
+                <p className="mb-4 text-gray-200">
+                  This cognitive cartography system aims to enhance this process, making it more efficient 
+                  and tailored to specific needs.
+                </p>
+                <div className="flex gap-4 mt-6">
+                  <Link 
+                    href="https://github.com/banditofsmoke/cognitive-cartography-system" 
+                    target="_blank" 
+                    className="px-6 py-3 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition border border-blue-700"
+                  >
+                    GitHub Repository
+                  </Link>
+                  <Link 
+                    href="https://cognitive-cartography-system.sletchersystems.com/" 
+                    target="_blank" 
+                    className="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-500 transition"
+                  >
+                    Demo Site
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-blue-900/50 p-6 rounded-lg mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-blue-300">Key Features</h3>
+              <ul className="space-y-2">
+                {['Automatic extraction of key concepts from text',
+                  'Visualization of relationships between concepts',
+                  'Interactive interface for map manipulation',
+                  'Integration with existing knowledge bases',
+                  'Support for different map types (concept maps, argument maps, etc.)',
+                  'Collaboration features for shared mapping'
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-green-400 mr-2">✓</span>
+                    <span className="text-gray-200">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="bg-blue-900/50 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4 text-blue-300">Technical Approach</h3>
+              <p className="text-gray-200">
+                The system utilizes modern NLP techniques to parse and understand text, combined with 
+                graph visualization algorithms to create meaningful representations. The frontend provides 
+                an intuitive interface for users to interact with the generated maps, while the backend 
+                handles the heavy lifting of content analysis and map generation.
+              </p>
+              <p className="mt-4 text-gray-200 italic">
+                Note: This project is currently in development and the demo is for visualization purposes only.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* Booking Modal */}
+        <BookingModal 
+          isOpen={isBookingOpen} 
+          onClose={() => setIsBookingOpen(false)} 
+          title="Join Early Access" 
+          description="Schedule a time to see Sletchy in action and discuss how it can transform your workplace." 
+          buttonText="Book Now"
+          buttonLink="https://calendly.com/sletchersystems/demo"
+        />    
+      </div>
     </div>
-  )
+  ) 
+
 }

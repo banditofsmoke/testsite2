@@ -9,9 +9,9 @@ const inter = Inter({ subsets: ['latin'] })
 const navigationConfigs = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/products', label: 'Products' },
-  { href: '/solutions', label: 'Solutions' },
-  { href: '/clients', label: 'Clients' }
+  { href: '/projects', label: 'Projects' },  // Changed from 'products' to 'projects'
+  { href: '/solutions', label: 'Solutions' }
+  // "Clients" entry removed
 ]
 
 function NavigationLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -58,7 +58,7 @@ export default function RootLayout({
                 &copy; 2024 Sletcher Systems
               </p>
               <p className="mt-2 animate-fade-in delay-100 text-sm md:text-base">
-                We Accept BTC and ETH.
+                
               </p>
             </div>
           </footer>

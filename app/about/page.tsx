@@ -27,7 +27,7 @@ const aboutSections = [
   {
     title: "AI Development",
     icon: Brain,
-    content: "Expertise in machine learning, neural networks, and AI system development."
+    content: "Expertise in machine learning, neural networks, agentic workflows (A2A), and AI system development."
   },
   {
     title: "Software Engineering",
