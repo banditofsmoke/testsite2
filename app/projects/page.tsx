@@ -176,34 +176,60 @@ export default function Projects() {
           </div>
         </div>
         
+        {/* Updated Key Features */}
         <div className="bg-blue-900/50 p-6 rounded-lg mb-8">
           <h3 className="text-xl font-semibold mb-4 text-blue-300">Key Features</h3>
           <ul className="space-y-2 text-gray-200">
-            {['Automatic extraction of key concepts from text',
-              'Visualization of relationships between concepts',
-              'Interactive interface for map manipulation',
-              'Integration with existing knowledge bases',
-              'Support for different map types (concept maps, argument maps, etc.)',
-              'Collaboration features for shared mapping'
-            ].map((feature, index) => (
-              <li key={index} className="flex items-start">
-                <span className="text-green-400 mr-2">✓</span>
-                <span>{feature}</span>
-              </li>
-            ))}
+            <li className="flex items-start">
+              <span className="text-green-400 mr-2">✓</span>
+              <span>Automatic extraction of key concepts from text (Cognitive Cartography)</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-400 mr-2">✓</span>
+              <span>Real-time LLM activation capture and visualization (Brain-Inspired System)</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-400 mr-2">✓</span>
+              <span>3D brain model visualization with WebGL/Three.js</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-400 mr-2">✓</span>
+              <span>Modular brain region architecture with independent vector databases</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-400 mr-2">✓</span>
+              <span>Interactive interface for map manipulation and brain exploration</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-400 mr-2">✓</span>
+              <span>Integration with existing knowledge bases and embedding models</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-400 mr-2">✓</span>
+              <span>Support for different visualization types (concept maps, brain activation maps)</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-400 mr-2">✓</span>
+              <span>Event-driven routing system for &lt;500ms latency</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-400 mr-2">✓</span>
+              <span>Dimensionality reduction and clustering for activation mapping</span>
+            </li>
           </ul>
         </div>
         
+        {/* Updated Technical Approach */}
         <div className="bg-blue-900/50 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-4 text-blue-300">Technical Approach</h3>
-          <p className="text-gray-200">
-            The system utilizes modern NLP techniques to parse and understand text, combined with 
-            graph visualization algorithms to create meaningful representations. The frontend provides 
-            an intuitive interface for users to interact with the generated maps, while the backend 
-            handles the heavy lifting of content analysis and map generation.
+          <p className="text-gray-200 mb-4">
+            The system combines two complementary approaches: (1) A cognitive cartography system that utilizes modern NLP techniques and graph visualization algorithms for traditional mind mapping, and (2) A brain-inspired LLM visualization system that captures transformer activations in real-time, routes them through modular "brain region" modules (each with dedicated vector databases), and visualizes the results on a 3D brain model.
+          </p>
+          <p className="text-gray-200 mb-4">
+            The architecture uses event-driven streaming (Kafka/WebSockets), specialized embedding models per region, and advanced clustering techniques to map high-dimensional LLM states onto functional brain analogs.
           </p>
           <p className="mt-4 text-gray-200 italic">
-            Note: This project is currently in development and the demo is for visualization purposes only.
+            Note: This project represents cutting-edge research at the intersection of AI interpretability and neuroscience visualization. Both systems are currently in active development.
           </p>
         </div>
       </div>
