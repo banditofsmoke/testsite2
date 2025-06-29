@@ -34,34 +34,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gradient-to-br from-gray-900 to-blue-900`}>
+      <body className={`${inter.className}`}>
         <div className="min-h-screen">
-          <header className="bg-gray-900/90 backdrop-blur-sm text-white fixed w-full top-0 z-40 border-b border-gray-800">
-            <nav className="container mx-auto px-4 md:px-4 py-1 md:py-2">
-              <ul className="flex flex-wrap justify-end space-x-2 md:space-x-8">
-                {navigationConfigs.map((link) => (
-                  <NavigationLink key={link.href} href={link.href}>
-                    {link.label}
-                  </NavigationLink>
-                ))}
-              </ul>
-            </nav>
-          </header>
-
-          <main className="pt-10 md:pt-12">
+          <main>
             {children}
           </main>
-
-          <footer className="bg-gray-900/90 backdrop-blur-sm text-white py-6 md:py-8 text-center border-t border-gray-800">
-            <div className="container mx-auto px-4 md:px-6">
-              <p className="animate-fade-in text-sm md:text-base">
-                &copy; 2024 Sletcher Systems
-              </p>
-              <p className="mt-2 animate-fade-in delay-100 text-sm md:text-base">
-                
-              </p>
-            </div>
-          </footer>
         </div>
       </body>
     </html>
