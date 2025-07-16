@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-
 import { useState } from "react"
 import { useForm, ValidationError } from '@formspree/react'
 import { Button } from "@/components/ui/button"
@@ -20,8 +19,8 @@ export default function SletcherSystems() {
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   
-  // Use Formspree hook
-  const [state, handleFormspreeSubmit] = useForm("xgvzedpv")
+  // Use Formspree hook with new endpoint
+  const [state, handleFormspreeSubmit] = useForm("mpwzrvlo")
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {}
