@@ -43,7 +43,7 @@ export default function SletcherSystems() {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch('https://formspree.io/f/mpwzrvlo', {
+      const response = await fetch('https://formspree.io/f/xgvzedpv', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
