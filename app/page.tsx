@@ -1,49 +1,11 @@
 "use client"
 
 import React from "react"
-import { useForm, ValidationError } from '@formspree/react'
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { Eye, Network, Cpu, Globe, Zap, HardDrive } from "lucide-react"
 
 export default function SletcherSystems() {
-  // Use Formspree hook - ONLY this, no custom state
-  const [state, handleSubmit] = useForm("mpwzrvlo")
-
-  // Show success message
-  if (state.succeeded) {
-    return (
-      <div className="min-h-screen bg-black text-white">
-        <header className="border-b border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-6">
-              <div>
-                <h1 className="text-2xl font-bold tracking-tight">Sletcher Systems</h1>
-                <p className="text-gray-400 text-sm mt-1">Adaptive Security Infrastructure</p>
-              </div>
-            </div>
-          </div>
-        </header>
-        
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-8">Thank You!</h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Your message has been sent successfully. We will contact you within 24 hours.
-            </p>
-            <Button
-              onClick={() => window.location.reload()}
-              className="bg-[#1a365d] hover:bg-[#2d4a6b] text-white px-8 py-3"
-            >
-              Send Another Message
-            </Button>
-          </div>
-        </section>
-      </div>
-    )
-  }
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -57,7 +19,7 @@ export default function SletcherSystems() {
             <nav className="hidden md:flex space-x-8">
               <a href="#capabilities" className="text-gray-300 hover:text-white transition-colors">Capabilities</a>
               <a href="#technology" className="text-gray-300 hover:text-white transition-colors">Technology</a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
+              <a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a>
             </nav>
           </div>
         </div>
@@ -79,8 +41,8 @@ export default function SletcherSystems() {
                 View Capabilities
               </Button>
               <Button variant="outline" size="lg" className="border-gray-600 text-white hover:bg-gray-900 px-8 py-3 bg-transparent"
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-                Discuss Requirements
+                onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}>
+                Learn More
               </Button>
             </div>
           </div>
@@ -134,7 +96,7 @@ export default function SletcherSystems() {
             <div className="text-center">
               <Globe className="w-16 h-16 text-[#1a365d] mx-auto mb-6" />
               <h3 className="text-lg font-bold mb-3">Multi-Language Analysis</h3>
-              <p className="text-gray-400 text-sm">Threat detection across African languages</p>
+              <p className="text-gray-400 text-sm">Threat detection across diverse languages</p>
             </div>
             <div className="text-center">
               <Zap className="w-16 h-16 text-[#1a365d] mx-auto mb-6" />
@@ -150,7 +112,7 @@ export default function SletcherSystems() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-950">
+      <section id="about" className="py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h2 className="text-3xl lg:text-4xl font-bold mb-8">About</h2>
@@ -159,91 +121,6 @@ export default function SletcherSystems() {
               <p>We develop intelligent security systems that detect and respond to evolving threats. Our solutions operate independently of external infrastructure, ensuring continuous protection even in compromised environments.</p>
               <p>Based in South Africa, we understand the unique security challenges facing organizations operating in complex threat landscapes.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-8">Contact</h2>
-            <p className="text-xl text-gray-300 mb-12">Discuss your security infrastructure requirements</p>
-
-            {/* UNCONTROLLED FORM - Let Formspree handle everything */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">Name *</label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    className="bg-gray-900 border-gray-700 text-white"
-                    placeholder="Your name"
-                    required
-                  />
-                  <ValidationError prefix="Name" field="name" errors={state.errors} />
-                </div>
-                <div>
-                  <label htmlFor="organization" className="block text-sm font-medium mb-2">Organization *</label>
-                  <Input
-                    id="organization"
-                    name="organization"
-                    type="text"
-                    className="bg-gray-900 border-gray-700 text-white"
-                    placeholder="Your organization"
-                    required
-                  />
-                  <ValidationError prefix="Organization" field="organization" errors={state.errors} />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email *</label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    className="bg-gray-900 border-gray-700 text-white"
-                    placeholder="your.email@organization.com"
-                    required
-                  />
-                  <ValidationError prefix="Email" field="email" errors={state.errors} />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone</label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    className="bg-gray-900 border-gray-700 text-white"
-                    placeholder="+27 XX XXX XXXX"
-                  />
-                  <ValidationError prefix="Phone" field="phone" errors={state.errors} />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Security Challenge *</label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  className="bg-gray-900 border-gray-700 text-white min-h-[120px]"
-                  placeholder="Describe your current security infrastructure and specific challenges..."
-                  required
-                />
-                <ValidationError prefix="Message" field="message" errors={state.errors} />
-              </div>
-
-              <Button
-                type="submit"
-                disabled={state.submitting}
-                className="bg-[#1a365d] hover:bg-[#2d4a6b] text-white px-8 py-3 w-full md:w-auto"
-              >
-                {state.submitting ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
           </div>
         </div>
       </section>
