@@ -41,19 +41,40 @@ export default function SletcherSystems() {
     if (!validateForm()) return
 
     setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSubmitting(false)
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mpwzrvlo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          organization: formData.organization,
+          email: formData.email,
+          phone: formData.phone,
+          securityChallenge: formData.securityChallenge,
+        }),
+      })
 
-    // Reset form
-    setFormData({
-      name: "",
-      organization: "",
-      securityChallenge: "",
-      email: "",
-      phone: "",
-    })
-    alert("Message sent successfully. We will contact you within 24 hours.")
+      if (response.ok) {
+        // Reset form on success
+        setFormData({
+          name: "",
+          organization: "",
+          securityChallenge: "",
+          email: "",
+          phone: "",
+        })
+        alert("Message sent successfully. We will contact you within 24 hours.")
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      alert("Failed to send message. Please try again or contact us directly.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputChange = (field: string, value: string) => {
