@@ -1,6 +1,6 @@
 "use client"
 
-import type React from "react"
+import React from "react"
 
 import { useState } from "react"
 import { useForm, ValidationError } from '@formspree/react'
@@ -39,22 +39,16 @@ export default function SletcherSystems() {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!validateForm()) return
 
-    // Create FormData for Formspree
-    const formDataForSubmission = new FormData()
-    formDataForSubmission.append('name', formData.name)
-    formDataForSubmission.append('organization', formData.organization)
-    formDataForSubmission.append('email', formData.email)
-    formDataForSubmission.append('phone', formData.phone)
-    formDataForSubmission.append('securityChallenge', formData.securityChallenge)
+    // Submit to Formspree using the hook
+    await handleFormspreeSubmit(e)
+  }
 
-    // Submit to Formspree
-    await handleFormspreeSubmit(formDataForSubmission)
-    
-    // Reset form on success
+  // Reset form after successful submission
+  React.useEffect(() => {
     if (state.succeeded) {
       setFormData({
         name: "",
@@ -65,7 +59,7 @@ export default function SletcherSystems() {
       })
       setErrors({})
     }
-  }
+  }, [state.succeeded])
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
@@ -278,6 +272,7 @@ export default function SletcherSystems() {
                     onChange={(e) => handleInputChange("name", e.target.value)}
                     className="bg-gray-900 border-gray-700 text-white"
                     placeholder="Your name"
+                    required
                   />
                   {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
                   <ValidationError prefix="Name" field="name" errors={state.errors} />
@@ -295,6 +290,7 @@ export default function SletcherSystems() {
                     onChange={(e) => handleInputChange("organization", e.target.value)}
                     className="bg-gray-900 border-gray-700 text-white"
                     placeholder="Your organization"
+                    required
                   />
                   {errors.organization && <p className="text-red-400 text-sm mt-1">{errors.organization}</p>}
                   <ValidationError prefix="Organization" field="organization" errors={state.errors} />
@@ -314,6 +310,7 @@ export default function SletcherSystems() {
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     className="bg-gray-900 border-gray-700 text-white"
                     placeholder="your.email@organization.com"
+                    required
                   />
                   {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
                   <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -337,19 +334,20 @@ export default function SletcherSystems() {
               </div>
 
               <div>
-                <label htmlFor="securityChallenge" className="block text-sm font-medium mb-2">
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Security Challenge *
                 </label>
                 <Textarea
-                  id="securityChallenge"
-                  name="securityChallenge"
+                  id="message"
+                  name="message"
                   value={formData.securityChallenge}
                   onChange={(e) => handleInputChange("securityChallenge", e.target.value)}
                   className="bg-gray-900 border-gray-700 text-white min-h-[120px]"
                   placeholder="Describe your current security infrastructure and specific challenges..."
+                  required
                 />
                 {errors.securityChallenge && <p className="text-red-400 text-sm mt-1">{errors.securityChallenge}</p>}
-                <ValidationError prefix="Security Challenge" field="securityChallenge" errors={state.errors} />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
 
               <Button
