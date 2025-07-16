@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import { useForm, ValidationError } from '@formspree/react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -18,7 +19,9 @@ export default function SletcherSystems() {
     phone: "",
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  
+  // Use Formspree hook
+  const [state, handleFormspreeSubmit] = useForm("xgvzedpv")
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {}
@@ -40,40 +43,27 @@ export default function SletcherSystems() {
     e.preventDefault()
     if (!validateForm()) return
 
-    setIsSubmitting(true)
-    
-    try {
-      const response = await fetch('https://formspree.io/f/xgvzedpv', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          organization: formData.organization,
-          email: formData.email,
-          phone: formData.phone,
-          securityChallenge: formData.securityChallenge,
-        }),
-      })
+    // Create FormData for Formspree
+    const formDataForSubmission = new FormData()
+    formDataForSubmission.append('name', formData.name)
+    formDataForSubmission.append('organization', formData.organization)
+    formDataForSubmission.append('email', formData.email)
+    formDataForSubmission.append('phone', formData.phone)
+    formDataForSubmission.append('securityChallenge', formData.securityChallenge)
 
-      if (response.ok) {
-        // Reset form on success
-        setFormData({
-          name: "",
-          organization: "",
-          securityChallenge: "",
-          email: "",
-          phone: "",
-        })
-        alert("Message sent successfully. We will contact you within 24 hours.")
-      } else {
-        throw new Error('Failed to send message')
-      }
-    } catch (error) {
-      alert("Failed to send message. Please try again or contact us directly.")
-    } finally {
-      setIsSubmitting(false)
+    // Submit to Formspree
+    await handleFormspreeSubmit(formDataForSubmission)
+    
+    // Reset form on success
+    if (state.succeeded) {
+      setFormData({
+        name: "",
+        organization: "",
+        securityChallenge: "",
+        email: "",
+        phone: "",
+      })
+      setErrors({})
     }
   }
 
@@ -82,6 +72,40 @@ export default function SletcherSystems() {
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: "" }))
     }
+  }
+
+  // Show success message
+  if (state.succeeded) {
+    return (
+      <div className="min-h-screen bg-black text-white">
+        {/* Header */}
+        <header className="border-b border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center py-6">
+              <div>
+                <h1 className="text-2xl font-bold tracking-tight">Sletcher Systems</h1>
+                <p className="text-gray-400 text-sm mt-1">Adaptive Security Infrastructure</p>
+              </div>
+            </div>
+          </div>
+        </header>
+        
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold mb-8">Thank You!</h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Your message has been sent successfully. We will contact you within 24 hours.
+            </p>
+            <Button
+              onClick={() => window.location.reload()}
+              className="bg-[#1a365d] hover:bg-[#2d4a6b] text-white px-8 py-3"
+            >
+              Send Another Message
+            </Button>
+          </div>
+        </section>
+      </div>
+    )
   }
 
   return (
@@ -248,6 +272,7 @@ export default function SletcherSystems() {
                   </label>
                   <Input
                     id="name"
+                    name="name"
                     type="text"
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
@@ -255,6 +280,7 @@ export default function SletcherSystems() {
                     placeholder="Your name"
                   />
                   {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
+                  <ValidationError prefix="Name" field="name" errors={state.errors} />
                 </div>
 
                 <div>
@@ -263,6 +289,7 @@ export default function SletcherSystems() {
                   </label>
                   <Input
                     id="organization"
+                    name="organization"
                     type="text"
                     value={formData.organization}
                     onChange={(e) => handleInputChange("organization", e.target.value)}
@@ -270,6 +297,7 @@ export default function SletcherSystems() {
                     placeholder="Your organization"
                   />
                   {errors.organization && <p className="text-red-400 text-sm mt-1">{errors.organization}</p>}
+                  <ValidationError prefix="Organization" field="organization" errors={state.errors} />
                 </div>
               </div>
 
@@ -280,6 +308,7 @@ export default function SletcherSystems() {
                   </label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
@@ -287,6 +316,7 @@ export default function SletcherSystems() {
                     placeholder="your.email@organization.com"
                   />
                   {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
 
                 <div>
@@ -295,12 +325,14 @@ export default function SletcherSystems() {
                   </label>
                   <Input
                     id="phone"
+                    name="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
                     className="bg-gray-900 border-gray-700 text-white"
                     placeholder="+27 XX XXX XXXX"
                   />
+                  <ValidationError prefix="Phone" field="phone" errors={state.errors} />
                 </div>
               </div>
 
@@ -310,20 +342,22 @@ export default function SletcherSystems() {
                 </label>
                 <Textarea
                   id="securityChallenge"
+                  name="securityChallenge"
                   value={formData.securityChallenge}
                   onChange={(e) => handleInputChange("securityChallenge", e.target.value)}
                   className="bg-gray-900 border-gray-700 text-white min-h-[120px]"
                   placeholder="Describe your current security infrastructure and specific challenges..."
                 />
                 {errors.securityChallenge && <p className="text-red-400 text-sm mt-1">{errors.securityChallenge}</p>}
+                <ValidationError prefix="Security Challenge" field="securityChallenge" errors={state.errors} />
               </div>
 
               <Button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={state.submitting}
                 className="bg-[#1a365d] hover:bg-[#2d4a6b] text-white px-8 py-3 w-full md:w-auto"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {state.submitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>
